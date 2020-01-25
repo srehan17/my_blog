@@ -1,7 +1,7 @@
 <% content_for :page_title, 'Blog Index' %>
 
-  <section>
-    <div class="container">
+  <section class="section">
+    <div class=" container" ="container" ">
       <% @posts.each do |post| %>
         <div class="card">
           <div class="card-content">
@@ -11,14 +11,16 @@
                   <%= link_to post.title, post %></p>
               </div>
             </div>
+            <div class="content">
+              <%= post.content %>
+            </div>
+            <div class="comment-count">
+              <span class="tag is-rounded">
+                <%= post.comments.count %>
+                comments
+              </span>
+            </div>
           </div>
-          <div class="content">
-            <%= post.content %>
-          </div>
-          <div class="comment-count">
-            <span class="tag is-rounded"></span>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </section>
+        <% end %>
+      </div>
+    </section>
