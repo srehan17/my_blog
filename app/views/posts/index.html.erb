@@ -1,26 +1,24 @@
-<% content_for :page_title, 'Blog Index' %>
+<% content_for :page_title, 'Blog Posts' %>
 
-  <section class="section">
-    <div class=" container" ="container" ">
+  <div class="container">
+    <div class="columns is-multiline">
       <% @posts.each do |post| %>
-        <div class="card">
-          <div class="card-content">
+        <div class="column column-post is-flex is-one-quarter">
+          <div class="box index-page">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">
-                  <%= link_to post.title, post %></p>
+                <div class="content">
+                  <h2 class="title is-4">
+                    <%= link_to post.title, post %>
+                  </h2>
+                  <%= sanitize(post.content.truncate(100)) %>
+                  <hr/>
+                  <%= link_to 'Read more', post %>
+                </div>
               </div>
             </div>
-            <div class="content">
-              <%= post.content %>
-            </div>
-            <div class="comment-count">
-              <span class="tag is-rounded">
-                <%= post.comments.count %>
-                comments
-              </span>
-            </div>
           </div>
-        <% end %>
-      </div>
-    </section>
+        </div>
+      <% end %>
+    </div>
+  </div>

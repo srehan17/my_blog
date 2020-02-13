@@ -27,6 +27,14 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
+
+gem 'trix', '~> 0.11.1'
+
+gem 'carrierwave'
+
+gem 'bootstrap', '~> 4.3.1'
+
+# gem 'actiontext', '~> 6.0', '>= 6.0.2.1'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,6 +50,9 @@ gem 'bulma-rails', '~> 0.8.0'
 
 # Forms made easy!
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
+
+# The redactor-rails gem integrates the Redactor editor
+gem 'redactor-rails', '~> 0.5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

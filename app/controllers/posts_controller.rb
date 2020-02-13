@@ -35,14 +35,16 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-
-    redirect_to posts_path
+    respond_to do |format|
+      format.html { redirect_to posts_path, notice: 'Post was deleted.' }
+      format.json { head :no_content }
+    end
     end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :picture)
   end
 
   def find_post

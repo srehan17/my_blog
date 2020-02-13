@@ -1,17 +1,22 @@
-<section class="section">
-  <div class="container">
-    <%= simple_form_for @post do |f| %>
-    <div class="field">
-      <div class="control">
-        <%= f.input :title, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
-      </div>
-    </div>
-    <div class="field">
-      <div class="control">
-        <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' } %>
-      </div>
-    </div>
-    <%= f.button :submit, class: "button is-primary" %>
-  <% end %>
+<%= simple_form_for @post do |f| %>
+
+<div class="field">
+  <div class="control">
+    <%= f.input :title, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
+  </div>
 </div>
-</section>
+<div class="field">
+  <div class="control" id="control-textarea">
+    <%= f.input :content, as: :trix_editor, input_html: { class: 'textarea' }, placeholder: "write here", wrapper: false, label: "Post", label_html: { class: 'label' } %>
+  </div>
+</div>
+<div class="field">
+  <div class="control">
+    <label for="file-field">Upload Image</label>
+    <%= f.file_field :picture, id:"file-field", accept: 'image/png,image/jpeg,image/jpg' %>
+  </div>
+</div>
+
+<%= f.button :submit, class: "button is-primary" %>
+
+<% end %>

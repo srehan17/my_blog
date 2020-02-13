@@ -1,0 +1,72 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+  .flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: lightblue;
+  }
+
+  .flex-item {
+    background: lightgreen;
+    padding: 15px;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    line-height: 10px;
+    &:hover {
+      background: white;
+    }
+  }
+
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 5px;
+  flex: 1 100%;
+}
+
+.main {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+
+.aside-1 {
+  background: lightpink;
+}
+
+.aside-2 {
+  background: lightblue;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+.footer {
+background-color: white;}
+
+body {
+  padding: 2em;
+}

@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyBlog</title>
+    <title>BabyBlogger</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <section class="hero is-success is-small">
-      <!-- Hero head: will stick at the top -->
+    <div class="hero is-primary is-small-with-navbar">
       <div class="hero-head">
         <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <%= link_to 'Demo Blog', root_path, class: "navbar-item" %>
-              <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
-              <div class="navbar-end">
-                <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
+          <div class="logo">
+            <strong><%= link_to 'BabyBlogger', root_path, class: "navbar-item", id: "baby_blogger-nav_item" %>
+            </strong>
+          </div>
+          <div class="navbar-brand">
+            <a role="button" class="navbar-burger burger" id="nav-toggle" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA" onclick="toggleBurger()">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <%= link_to "Create New Post", new_post_path %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "About", static_pages_about_path%>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "Contact", static_pages_contact_path %>
               </div>
             </div>
           </div>
         </nav>
       </div>
 
-      <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
@@ -39,7 +45,9 @@
           </h1>
         </div>
       </div>
+    </div>
+    <section class="section">
+      <%= yield %>
     </section>
-    <%= yield %>
   </body>
 </html>

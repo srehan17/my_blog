@@ -10,8 +10,56 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require trix
+ *= require redactor-rails
  *= require_tree .
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
+
+.navbar {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#baby_blogger-nav_item {
+  font-size: 20px;
+  position: absolute;
+  margin-left: 20px;
+  padding: 10px;
+  margin: auto;
+  text-transform: lowercase;
+  font-family: Verdana, Arial;
+  color: yellow;
+  border: 1px solid gray;
+  border-radius: 25px;
+  &:hover {
+    padding: 10px;
+  }
+}
+
+.box.index-page:hover {
+  background-color: lightblue;
+}
+
+.navbar-burger {
+  margin-top: 10px;
+}
+
+.navbar-menu {
+  margin-top: 10px;
+}
+.navbar-item {
+  text-align: right;
+}
+//
+// @media all and ( min-width: 900px ) {
+// .navbar-burger { display: none ; }
+// .navbar-end { overflow:visible; width: auto !important; }
+// }
+//
+//
+// @media all and ( max-width: 900px ) {
+// .navbar-burger { display: block; }
+// .navbar-end { overflow: hidden; }
+// }
