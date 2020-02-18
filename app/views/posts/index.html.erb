@@ -5,18 +5,12 @@
       <% @posts.each do |post| %>
         <div class="column column-post is-flex is-one-quarter">
           <div class="box index-page">
-            <div class="media">
-              <div class="media-content">
-                <div class="content">
-                  <h2 class="title is-4">
-                    <%= link_to post.title, post %>
-                  </h2>
-                  <%= sanitize(post.content.truncate(100)) %>
-                  <hr/>
-                  <%= link_to 'Read more', post %>
-                </div>
-              </div>
-            </div>
+            <h2 class="title is-4">
+              <%= link_to post.title, post %>
+            </h2>
+            <%= sanitize(post.content.truncate(100)) %>
+            <hr/>
+            <%= link_to 'Read more', post %>
           </div>
         </div>
       <% end %>
