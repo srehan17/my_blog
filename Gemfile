@@ -52,7 +52,7 @@ gem 'bulma-rails', '~> 0.8.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 
 # The redactor-rails gem integrates the Redactor editor
-gem 'redactor-rails', '~> 0.5.0'
+# gem 'redactor-rails', '~> 0.5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
